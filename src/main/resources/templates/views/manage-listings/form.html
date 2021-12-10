@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:replace="fragments/header :: header" />
+    <body>
+        <nav th:replace="fragments/menu :: menu" />
+        <div class="container">
+            <form method="post">
+                <div>
+                    <h3 th:text="${listing.id > 0} ? 'Edit Listing' : 'Create Listing'" />
+                </div>
+                <div class="form-group">
+                    <label for="title" class="form-label">Title</label>
+                    <input th:value="${listing.title}" type="text" id="title" class="form-control" name="title" />
+                </div>
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea th:text="${listing.description}" name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">
+                        <span th:text="${listing.id > 0} ? 'Update' : 'Store'" />
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

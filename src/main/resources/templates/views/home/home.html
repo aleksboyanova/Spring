@@ -1,0 +1,9 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:replace="fragments/header :: header" />
+    <body>
+        <nav th:replace="fragments/menu :: menu" />
+        <div class="container">
+            <div th:replace="${isAdmin} ? ~{views/home/admin :: admin-home} : ~{views/home/user :: user-home}" />
+        </div>
+    </body>
+</html>
